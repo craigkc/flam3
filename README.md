@@ -1,10 +1,8 @@
 # FLAM3 - Cosmic Recursive Fractal Flames
-See the file COPYING for the license covering this software.
-
-This is free software to render fractal flames as described on
-http://flam3.com.  Flam3-animate makes animations, and flam3-render
-makes still images.  Flam3-genome creates and manipulates genomes
-(parameter sets).  A C library is also installed.
+See the file `COPYING` for the license covering this software.  This is free software to render fractal flames as described on http://flam3.com.
+- `flam3-animate` makes animations
+- `flam3-render` makes still images
+- `flam3-genome` creates and manipulates genomes (parameter sets). A C library is also installed.
 
 Note: the following instructions are written for Linux users.  Windows
 users may install the cygwin package to get the "env" command or set
@@ -55,10 +53,11 @@ and it should produce 00000.jpg and 00001.jpg, one image for each
 flam3-animate < test.flam3
 ```
 
-and it should produce 100 files named 00000.jpg through 00099.jpg that
-interpolate between the two <flame> elements.
+and it should produce 100 files named `00000.jpg` through `00099.jpg` that
+interpolate between the two \<flame\> elements.
 
-| envar | default | meaning |
+## Environment Variables
+| Variable | Default | Meaning |
 | :---- | :---- | :---- |
 prefix           | (empty)         | prefix names of output files with this string.
 begin            | j               | time of first frame to render (j=first time in input file) (animate only)
@@ -98,15 +97,15 @@ loops            | NA              | number of times to rotate each control poin
 tries            | 50              | number of tries to make to find a good genome. (genome only)
 strip            | NA              | strip input, frame and nframes control which one. (genome only)
 transparency     | 0               | make bknd transparent, if format supports it (render/animate)
-name_enable      | 0               | use 'name' attr in <flame> to name image output if present (render only)
-nick             | ""              | nickname to use in <edit> tags / img comments
-url              | ""              | url to use in <edit> tags / img comments
-id               | ""              | ID  to use in <edit> tags / img comments
-comment          | ""              | comment string for <edit> tags (genome only)
+name_enable      | 0               | use 'name' attr in \<flame>\ to name image output if present (render only)
+nick             | ""              | nickname to use in \<edit>\ tags / img comments
+url              | ""              | url to use in \<edit>\ tags / img comments
+id               | ""              | ID  to use in \<edit>\ tags / img comments
+comment          | ""              | comment string for \<edit>\ tags (genome only)
 use_mem          | auto            | floating point number of bytes of memory to use (render only)
 noedits          | unset           | omit edit tags from output (genome only)
 write_genome     | 0               | write out genome associated with center of motion blur window (animate only)
-print_edit_depth | 0               | depth to truncate <edit> tag structure.  0 prints all <edit> tags (genome only)
+print_edit_depth | 0               | depth to truncate <edit> tag structure.  0 prints all \<edit>\ tags (genome only)
 intpalette       | unset           | round palette entries for importing into older Apophysis versions (genome only)
 insert_palette   | unset           | insert the palette into the image.
 enable_jpeg_comments  | 1          | enables comments in the jpeg header (render and animate)
@@ -121,8 +120,8 @@ for example:
 env dtime=5 prefix=foo. in=test.flam3 flam3-animate
 ```
 
-means to render every 5th frame of parameter file foo.flam3, and store
-the results in files named foo.XXXX.jpg.
+means to render every 5th frame of parameter file `foo.flam3`, and store
+the results in files named `foo.XXXX.jpg`.
 
 the flam3-convert program reads from stdin the old format created by
 the GIMP and writes to stdout the new xml format.
