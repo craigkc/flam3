@@ -16,25 +16,24 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-
 #include <stdio.h>
 #include "flam3.h"
 
 #define FLAM3_PNG_COM 8
 
 #ifdef WIN32
-   #define snprintf _snprintf
+#define snprintf _snprintf
 #endif
 
-typedef struct {
+typedef struct
+{
 
-   char *genome;
-   char *badvals;
-   char *numiters;
-   char *rtime;
+  char *genome;
+  char *badvals;
+  char *numiters;
+  char *rtime;
 
 } flam3_img_comments;
-
 
 void write_jpeg(FILE *file, unsigned char *image, int width, int height, flam3_img_comments *fpc);
 void write_png(FILE *file, void *image, int width, int height, flam3_img_comments *fpc, int bpc);

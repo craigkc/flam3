@@ -21,12 +21,22 @@
 
 #include "private.h"
 
-#define INTERP(x)  do { result->x = 0.0; \
-   for (k = 0; k < ncp; k++) result->x += c[k] * cpi[k].x; } while(0)
+#define INTERP(x)                   \
+  do                                \
+  {                                 \
+    result->x = 0.0;                \
+    for (k = 0; k < ncp; k++)       \
+      result->x += c[k] * cpi[k].x; \
+  } while (0)
 
-#define INTERI(x)  do { double tt = 0.0; \
-   for (k = 0; k < ncp; k++) tt += c[k] * cpi[k].x; \
-   result->x = (int)rint(tt); } while(0)
+#define INTERI(x)              \
+  do                           \
+  {                            \
+    double tt = 0.0;           \
+    for (k = 0; k < ncp; k++)  \
+      tt += c[k] * cpi[k].x;   \
+    result->x = (int)rint(tt); \
+  } while (0)
 
 double adjust_percentage(double in);
 double motion_funcs(int funcnum, double timeval);
@@ -45,10 +55,10 @@ void mult_matrix(double s1[2][2], double s2[2][2], double d[2][2]);
 int compare_xforms(const void *av, const void *bv);
 
 void interpolate_cmap(flam3_palette cmap, double blend,
-              int index0, double hue0, int index1, double hue1);
-void interp_and_convert_back(double *c, int ncps, int xfi, double cxang[4][2], 
-                             double cxmag[4][2], double cxtrn[4][2],double store_array[3][2]);                             
-void convert_linear_to_polar(flam3_genome *cp, int ncps, int xfi, int cflag, 
+                      int index0, double hue0, int index1, double hue1);
+void interp_and_convert_back(double *c, int ncps, int xfi, double cxang[4][2],
+                             double cxmag[4][2], double cxtrn[4][2], double store_array[3][2]);
+void convert_linear_to_polar(flam3_genome *cp, int ncps, int xfi, int cflag,
                              double cxang[4][2], double cxmag[4][2], double cxtrn[4][2]);
 
 void interpolate_catmull_rom(flam3_genome cps[], double t, flam3_genome *result);

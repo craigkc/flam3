@@ -21,14 +21,15 @@
 
 #include "private.h"
 
-#define DE_THRESH   100
+#define DE_THRESH 100
 
-typedef struct {
-   int max_filtered_counts;
-   int max_filter_index;
-   int kernel_size;
-   double *filter_widths;
-   double *filter_coefs;
+typedef struct
+{
+  int max_filtered_counts;
+  int max_filter_index;
+  int kernel_size;
+  double *filter_widths;
+  double *filter_coefs;
 } flam3_de_helper;
 
 extern double flam3_spatial_support[flam3_num_spatialfilters];
@@ -38,7 +39,5 @@ int flam3_create_spatial_filter(flam3_frame *spec, int field, double **filter);
 flam3_de_helper flam3_create_de_filters(double max_rad, double min_rad, double curve, int ss);
 double flam3_create_temporal_filter(int numsteps, int filter_type, double filter_exp, double filter_width,
                                     double **temporal_filter, double **temporal_deltas);
- 
+
 #endif
-
-

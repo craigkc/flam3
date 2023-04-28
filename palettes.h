@@ -19,13 +19,12 @@
 #ifndef palettes_included
 #define palettes_included
 
-
-typedef struct {
-    int number;
-    char name[flam3_name_len];
-    unsigned char colors[256][3];
+typedef struct
+{
+  int number;
+  char name[flam3_name_len];
+  unsigned char colors[256][3];
 } lib_palette;
-
 
 void rgb2hsv(double *rgb, double *hsv);
 void hsv2rgb(double *hsv, double *rgb);
@@ -34,4 +33,3 @@ double flam3_calc_alpha(double density, double gamma, double linrange);
 void flam3_calc_newrgb(double *cbuf, double ls, double highpow, double *newrgb);
 
 #endif
-
